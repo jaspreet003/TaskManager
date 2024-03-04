@@ -27,9 +27,13 @@ namespace TaskManager
                 var listOfTasks = con.Table<Task>().ToList();             
                 taskListView.ItemsSource = listOfTasks;
 
-
             }
         }
 
+        private void descriptionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+
+
+        }
     }
 }

@@ -6,7 +6,7 @@
         <StackLayout Margin="30" Spacing="20">
             <Label Text="List of Your Tasks !!!"
                 HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="taskListView">
+            <ListView x:Name="taskListView" ItemSelected="descriptionListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding Description}" TextColor="{Binding Color}"/>
