@@ -56,7 +56,7 @@ namespace TaskManager
                             taskEntry.Text = string.Empty;
                             selectedPriority.Text = string.Empty;
                             DisplayAlert("Success", "Task Inserted", "OK");
-                            
+                            Navigation.PushAsync(new TaskListPage());
                         }
                         else
                         {
