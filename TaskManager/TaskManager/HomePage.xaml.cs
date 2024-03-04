@@ -33,7 +33,7 @@ namespace TaskManager
                 {
                     priority = selectedPriority.Text.ToLower();
 
-                    if (priority != "high" || priority != "medium" || priority != "low")
+                    if (priority != "high" && priority != "medium" && priority != "low")
                     {
                         DisplayAlert("Priority does not match", "Priority should be high, medium or low only", "OK");
                     }
@@ -53,8 +53,10 @@ namespace TaskManager
 
                         if (row > 0)
                         {
-                            DisplayAlert("Success", "Task Inserted", "OK");
                             taskEntry.Text = string.Empty;
+                            selectedPriority.Text = string.Empty;
+                            DisplayAlert("Success", "Task Inserted", "OK");
+                            
                         }
                         else
                         {
