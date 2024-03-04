@@ -6,6 +6,7 @@ namespace TaskManager
 {
     public partial class App : Application
     {
+        public static string DatabaseLocation = string.Empty;
         public App()
         {
             InitializeComponent();
@@ -17,7 +18,7 @@ namespace TaskManager
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new ());
+            MainPage = new NavigationPage(new HomePage());
             DatabaseLocation = databaseLocation;
         }
 

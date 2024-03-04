@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.HomePage">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Spacing="40">
+            <Label Text="Welcome to Task Manager" TextColor="Black" FontSize="Large" HorizontalOptions="Center" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Task :" FontAttributes="Bold" FontSize="Medium"></Label>
+                <Entry x:Name="taskEntry" Placeholder="e.g. do your homework.." PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Priority :" FontAttributes="Bold" FontSize="Medium"></Label>
+                <Entry x:Name="selectedPriority" Placeholder="e.g. high , medium or low" PlaceholderColor="Gray"></Entry>
+            </StackLayout>
+
+            <Button Text="Save" Padding="10" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
