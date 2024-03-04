@@ -44,6 +44,17 @@ namespace TaskManager
 
                         task.Priority = selectedPriority.Text.ToLower();
 
+                        if(priority == "high")
+                        {
+                            task.Color = "red";
+                        }else if(priority == "medium"){
+                            task.Color = "yellow";
+                        }
+                        else
+                        {
+                            task.Color = "green";
+                        }
+
 
                         con.CreateTable<Task>();
 
@@ -56,6 +67,7 @@ namespace TaskManager
                             taskEntry.Text = string.Empty;
                             selectedPriority.Text = string.Empty;
                             DisplayAlert("Success", "Task Inserted", "OK");
+
                             Navigation.PushAsync(new TaskListPage());
                         }
                         else

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-
+using TaskManager.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,9 +17,19 @@ namespace TaskManager
             InitializeComponent();
         }
 
-        private void descriptionListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        protected override void OnAppearing()
         {
+            base.OnAppearing();
+            using (SQLiteConnection con = new SQLiteConnection(App.DatabaseLocation))
+            {
 
+                con.CreateTable<Task>();
+                var listOfTasks = con.Table<Task>().ToList();             
+                taskListView.ItemsSource = listOfTasks;
+
+
+            }
         }
+
     }
 }

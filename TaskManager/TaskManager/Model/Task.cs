@@ -15,5 +15,7 @@ namespace TaskManager.Model
         
         public string Priority { get; set; }
 
+        public string Color { get; set; }   
+
     }
 }
